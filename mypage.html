@@ -58,7 +58,7 @@
 	
 	query.find({
 		success: function(results) {
-			console.log('ok');
+			console.log(results);
 			for (i = 0; i < results; i++) {
 				var data = results[i];
 				var name = data.get('name');
