@@ -58,7 +58,7 @@ $("#upload-submit").click(function(e){
 	  var file = fileUploadControl.files[0];
 	  var name = "photo.jpg";
 	 
-	  var parseFile = new Parse.File(file);
+	  var parseFile = new Parse.File(name, file);
 	
 	  parseFile.save().then(function() {
 	  	console.log('It worked!')
