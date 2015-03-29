@@ -38,34 +38,44 @@
 					</ul>
 				</nav>
 			</header>
-<form method="post" action="file-upload-1.htm" name="submit" enctype="multipart/form-data">
+<form method="post"  name="submit" enctype="multipart/form-data">
   <input type="file" name="fileField"><br /><br />
-  <input type="submit" name="submit" value="Submit">
+  <input type="file" id="profilePhotoFileUpload">
+  <input type="submit" id="upload-submit" name="submit" value="Submit">
 </form>
-	
-<input type="file" id="profilePhotoFileUpload">
+
 <script>
-var fileUploadControl = $("#profilePhotoFileUpload")[0];
-if (fileUploadControl.files.length > 0) {
-  var file = fileUploadControl.files[0];
-  var name = "photo.jpg";
- 
-  var parseFile = new Parse.File(fileUpload);
 
-  parseFile.save(
-}
-
-parseFile.save().then(function(fileUpload) {
-
-	var userUpload = new Parse.Object("FileUpload");
-
-	userUpload.set('image', fileUpload);
-	userUpload.save().then(function() {
-		window.location = "mypage.html";
+$("#upload-submit").click(function(){
+	
+	this.preventDefault();
+	
+	var fileUploadControl = $("#profilePhotoFileUpload")[0];
+	
+	if (fileUploadControl.files.length > 0) {
+	  var file = fileUploadControl.files[0];
+	  var name = "photo.jpg";
+	 
+	  var parseFile = new Parse.File(fileUpload);
+	
+	  parseFile.save(
+	}
+	
+	parseFile.save().then(function(fileUpload) {
+	
+		var userUpload = new Parse.Object("FileUpload");
+	
+		userUpload.set('image', fileUpload);
+		userUpload.save().then(function() {
+			window.location = "mypage.html";
+		});
+	  
+	}, function(error) {
+	 
 	});
-  
-}, function(error) {
- 
+	
+	
+	
 });
 
 </script>
