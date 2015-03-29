@@ -53,7 +53,7 @@ $("#upload-submit").click(function(e){
 	
 	console.log(fileUploadControl.files);
 	
-	/*
+	
 	if (fileUploadControl.files.length > 0) {
 	  
 	  var file = fileUploadControl.files[0];
@@ -61,22 +61,16 @@ $("#upload-submit").click(function(e){
 	 
 	  var parseFile = new Parse.File(fileUpload);
 	
-	  parseFile.save(
+	  parseFile.save().then(function() {
+	  	console.log('It worked!')
+	  // The file has been saved to Parse.
+	  }, function(error) {
+	  	console.log(error);
+	  // The file either could not be read, or could not be saved to Parse.
+	  });
+	
+		
 	}
-	
-	parseFile.save().then(function(fileUpload) {
-	
-		var userUpload = new Parse.Object("FileUpload");
-	
-		userUpload.set('image', fileUpload);
-		userUpload.save().then(function() {
-			window.location = "mypage.html";
-		});
-	  
-	}, function(error) {
-	 
-	});  */
-	
 	
 	
 });
