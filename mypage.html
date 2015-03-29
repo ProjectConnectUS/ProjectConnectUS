@@ -37,6 +37,7 @@
 								<li><a href="successstories.html">Success Stories</a></li>
 								<li><a href="OurTeam.html">Our Team</a></li>
 								<li><a href="Upload.html">Upload an idea.</a></li>
+								<li><a href="mypage.html">Check Out These Pages</a></li>
 								<li>
 								</li>
 							</ul>
@@ -50,7 +51,7 @@ var FileUpload = Parse.Object.extend('FileUpload');
 var query = new Parse.Query(FileUpload);
 query.find({
 	success: function(results) {
-		for (i = 0; i < ; i++) {
+		for (i = 0; i < results; i++) {
 			var data = results[i];
 			var name = data.get('name');
 			var html = "<li>" + name + "</li>";
