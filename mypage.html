@@ -49,8 +49,7 @@
 
 <script type="text/javascript">
 
-		  Parse.initialize('HiYRTAUHvaaS2AkM4K960a1JtcvrrFVfYhLWiBzv','kIwXOkxsRfaCpXLSUnZ64NuNwS4OifJkiDzRnboy')
-	  
+	Parse.initialize('HiYRTAUHvaaS2AkM4K960a1JtcvrrFVfYhLWiBzv','kIwXOkxsRfaCpXLSUnZ64NuNwS4OifJkiDzRnboy')
 	
 	var files = Parse.Object.extend('file');
 	
@@ -58,11 +57,11 @@
 	
 	query.find({
 		success: function(results) {
-			console.log(results);
 			for (i = 0; i < results; i++) {
 				var data = results[i];
 				var name = data.get('name');
 				var html = "<li>" + name + "</li>";
+				console.log(name);
 				$("#list").append(html); 
 			}
 		}
