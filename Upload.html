@@ -64,6 +64,12 @@ $("#upload-submit").click(function(e){
 	  var parseFile = new Parse.File(name, file);
 	
 	  parseFile.save().then(function() {
+	  	
+	  	var file = new Parse.Object("file");
+		file.set("name", name);
+		file.set("file", parseFile);
+		file.save();
+	
 	  	console.log('It worked!')
 	  // The file has been saved to Parse.
 	  }, function(error) {
