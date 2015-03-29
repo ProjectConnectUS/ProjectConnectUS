@@ -47,23 +47,22 @@
 			</header>
 			<input type="file" id="profilePhotoFileUpload">
 <script>
-var FileUpload = Parse.Object.extend('FileUpload');
-var query = new Parse.Query(FileUpload);
-query.find({
-	success: function(results) {
-		for (i = 0; i < results; i++) {
-			var data = results[i];
-			var name = data.get('name');
-			var html = "<li>" + name + "</li>";
-			$("#list").append(html); 
-    		
+	
+	var files = Parse.Object.extend('file');
+	
+	var query = new Parse.Query(files);
+	
+	query.find({
+		success: function(results) {
+			for (i = 0; i < results; i++) {
+				var data = results[i];
+				var name = data.get('name');
+				var html = "<li>" + name + "</li>";
+				$("#list").append(html); 
+			}
 		}
-
-<ul id = 'list'> 
-</ul> 
-		
-	}, 
-	error
-});
-
+	});
+	
 </script>
+
+<ul id="list"></ul> 
