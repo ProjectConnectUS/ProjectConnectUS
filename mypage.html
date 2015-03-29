@@ -45,7 +45,7 @@
 					</ul>
 				</nav>
 			</header>
-			<input type="file" id="profilePhotoFileUpload">
+
 <script type="text/javascript">
 	
 	var files = Parse.Object.extend('file');
@@ -54,6 +54,7 @@
 	
 	query.find({
 		success: function(results) {
+			console.log('ok');
 			for (i = 0; i < results; i++) {
 				var data = results[i];
 				var name = data.get('name');
