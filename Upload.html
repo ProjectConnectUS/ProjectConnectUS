@@ -53,14 +53,12 @@ $("#upload-submit").click(function(e){
 	var fileUploadControl = $("#profilePhotoFileUpload")[0];
 	
 	console.log(fileUploadControl.files);
-	
-	
 	if (fileUploadControl.files.length > 0) {
 	  
 	  var file = fileUploadControl.files[0];
 	  var name = "photo.jpg";
 	 
-	  var parseFile = new Parse.File(fileUpload);
+	  var parseFile = new Parse.File(file);
 	
 	  parseFile.save().then(function() {
 	  	console.log('It worked!')
