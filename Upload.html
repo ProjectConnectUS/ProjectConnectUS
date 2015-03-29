@@ -53,7 +53,10 @@ $("#upload-submit").click(function(e){
 	var fileUploadControl = $("#profilePhotoFileUpload")[0];
 	
 	console.log(fileUploadControl.files);
+	
 	if (fileUploadControl.files.length > 0) {
+	  
+	  Parse.initialize('HiYRTAUHvaaS2AkM4K960a1JtcvrrFVfYhLWiBzv','kIwXOkxsRfaCpXLSUnZ64NuNwS4OifJkiDzRnboy')
 	  
 	  var file = fileUploadControl.files[0];
 	  var name = "photo.jpg";
