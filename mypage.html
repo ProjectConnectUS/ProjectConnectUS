@@ -61,8 +61,7 @@
 				var data = results[i];
 				var name = data.get('name');
 				var file = data.get('file');
-				var html = "<li><a href="+ file +">" + name + "</a></li>";
-				console.log(name);
+				var html = "<li><a href="+ file['url'] +">" + name + "</a></li>";
 				$("#list").append(html); 
 			}
 		}
